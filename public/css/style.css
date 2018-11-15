@@ -1,0 +1,87 @@
+html,
+body,
+ul,
+ol,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+.animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font: 200 24px/1.2 Lato, Arial, sans-serif;
+  background: #e0e5ea; }
+  .animation__checkbox {
+    position: absolute;
+    left: -999999px; }
+    .animation__checkbox:checked ~ .animation__modal {
+      display: block;
+      animation: modalShow 1s ease 1;
+      animation-fill-mode: both; }
+  .animation__button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #949da5;
+    background: #182c3d;
+    transition: 100ms;
+    cursor: pointer; }
+    .animation__button:hover {
+      background: #264662; }
+  .animation__modal {
+    display: none; }
+
+@keyframes modalShow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5); }
+  100% {
+    transform: translate(-50%, -90%) scale(1); } }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  max-width: 100%;
+  padding: 40px 40px;
+  transform: translate(-50%, -60%);
+  background: #182c3d; }
+  .modal__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    padding: 0 5px;
+    color: #949da5;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid #949da5;
+    transition: 100ms;
+    cursor: pointer; }
+    .modal__close-btn::after {
+      content: 'X'; }
+    .modal__close-btn:hover {
+      color: #182c3d;
+      background: #949da5;
+      border-color: #949da5; }
+    .modal__close-btn:active {
+      background: #264662;
+      border-color: #264662; }
+  .modal__text {
+    display: block;
+    text-align: left;
+    color: #949da5;
+    font-size: 24px; }
+    .modal__text--info {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 400; }

@@ -1,0 +1,48 @@
+.animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font: 200 24px/1.2 Lato, Arial, sans-serif;
+  background: #e0e5ea;
+
+  &__checkbox {
+    position: absolute;
+    left: -999999px;
+
+    &:checked {
+      & ~ .animation__modal {
+        display: block;
+        animation: modalShow 1s ease 1;
+        animation-fill-mode: both;
+      }
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: $gray;
+    background: $blue;
+    transition: 100ms;
+    cursor: pointer;
+
+    &:hover {
+      background: lighten($blue, 10%);
+    }
+  }
+
+  &__modal {
+    display: none;
+  }
+}
+
+@keyframes modalShow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    transform: translate(-50%, -90%) scale(1);
+  }
+}

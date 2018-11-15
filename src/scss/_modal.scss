@@ -1,0 +1,52 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  max-width: 100%;
+  padding: 40px 40px;
+  transform: translate(-50%, -60%);
+  background: $blue;
+
+  &__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    padding: 0 5px;
+    color: $gray;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid $gray;
+    transition: 100ms;
+    cursor: pointer;
+
+    &::after {
+      content: 'X';
+    }
+
+    &:hover {
+      color: $blue;
+      background: $gray;
+      border-color: $gray;
+    }
+
+    &:active {
+      background: lighten($blue, 10%);
+      border-color: lighten($blue, 10%);
+    }
+  }
+
+  &__text {
+    display: block;
+    text-align: left;
+    color: $gray;
+    font-size: 24px;
+
+    &--info {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+}
